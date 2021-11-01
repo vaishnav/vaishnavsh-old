@@ -1,2 +1,0 @@
-# vaishnavsh
-My portfolio site
