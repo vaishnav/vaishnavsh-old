@@ -10,6 +10,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // html loader
             {
                 test: /\.(html)$/,
                 use: [
@@ -18,6 +19,15 @@ module.exports = {
                         options: {minimize: true}
                     }
                 ]
+            },
+            // sass loader
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  "style-loader",
+                  "css-loader",
+                  "sass-loader",
+                ],
             },
         ]
     },
