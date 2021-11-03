@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -8,6 +9,16 @@ module.exports = {
         filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname, 'dist')
     },
+    plugins:
+    [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/index.html'),
+            minify: true
+        }),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ['dist']
+        })
+    ],
     module: {
         rules: [
             // html loader
@@ -16,7 +27,7 @@ module.exports = {
                 use: [
                     {
                         loader: "html-loader",
-                        options: {minimize: true}
+                        // options: {minimize: true}
                     }
                 ]
             },
@@ -29,16 +40,26 @@ module.exports = {
                   "sass-loader",
                 ],
             },
+            // Javascript
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use:
+                [
+                    'babel-loader'
+                ]
+            },
+            // Images
+            {
+
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        
+                type: 'asset/resource',
+        
+              },
         ]
     },
-    plugins:
-    [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/index.html'),
-            minify: true
-        }),
-    ],
-    mode: "development",
+    mode: "production",
     devServer: {
         static: {
           directory: path.join(__dirname, 'src'),
