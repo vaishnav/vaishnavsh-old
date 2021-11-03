@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://vaishnav.github.io/vaishnavsh/",
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/vaishnav/vaishnavsh/issues"
   },
-  "homepage": "https://github.com/vaishnav/vaishnavsh#readme",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "babel-loader": "^8.2.3",
