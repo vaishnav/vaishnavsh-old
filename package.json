@@ -6,7 +6,7 @@
   "homepage": "https://vaishnav.github.io/vaishnavsh/",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack",
+    "build": "webpack && cp ../CNAME dist/",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

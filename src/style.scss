@@ -8,11 +8,41 @@ html,body
     // background-image: url('static/bgc.jpg'); 
 }
 
-body{
+// body {
+//     position: fixed;
+//     /* prevent overscroll bounce*/
+//     // background-color: lightgreen;
+//     overflow-y: scroll;
+//     -webkit-overflow-scrolling: touch;
+//     /* iOS velocity scrolling */
+//   }
+  
+
+// body{
+    
+// }
+
+
+.rt{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
     background-image: url('static/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    // position: fixed;
 }
+
+@media(max-width:575px){
+    .rt{
+        height: 145%;
+    }
+}
+
+
+
 
 .test{
     border: 5px solid;
@@ -42,7 +72,8 @@ $white: #e6e6e6;
 
 
 .name{
-    margin-top: 100px;
+    margin-top: 50px;
+    padding-top: 50px;
     text-align: center;
 
     .white{
